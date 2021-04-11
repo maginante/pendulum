@@ -2,7 +2,7 @@
 
 Implementation of Double Pendulum in Python, using these formulas.
 
-![alt text](https://drive.google.com/file/d/1ih6yjKl4gfHNa6VCMHZsXd0346OZgcUH/view?usp=sharing)
+![formulas](https://drive.google.com/uc?export=view&id=1ih6yjKl4gfHNa6VCMHZsXd0346OZgcUH)
 
 
 Formulas:
