@@ -4,7 +4,10 @@
 import pygame
 import math
 
+# surface esolutions
 w, h = 600, 600
+# frames per second
+FPS = 35
 fpsClock = pygame.time.Clock()
 
 screen = pygame.display.set_mode((w, h))
@@ -16,22 +19,26 @@ color_line = (255, 255, 255)
 color_mass = (0, 255, 0)
 screen.fill((0, 0, 0))
 
+# lenght of cords
 r1 = 250.0
 r2 = 250.0
 
+# masses
 m1 = 30
 m2 = 30
 
+# angles of cords
 a1 = math.pi / 2
 a2 = math.pi / 4
 
+# velocities
 a1_vel = 0
 a2_vel = 0
 
+# gravity constant
 g = 1
 
 running = True
-
 
 while running:
 
@@ -43,11 +50,14 @@ while running:
     x2 = x1 + r2 * math.sin(a2)
     y2 = y1 + r2 * math.cos(a2)
 
+    # for simplicity, breaking the numerator into 4 parts
     num1 = -g * (2 * m1 + m2) * math.sin(a1)
     num2 = -m2 * g * math.sin(a1 - 2 * a2)
     num3 = -2 * math.sin(a1 - a2) * m2
     num4 = math.pow(a2_vel, 2) * r2 + math.pow(a1_vel, 2) * r1 * math.cos(a1 - a2)
+    # denominator
     den = r1 * (2 * m1 + m2 - m2 * math.cos(2 * a1 - 2 * a2))
+    # final equation
     a1_acc = (num1 + num2 + num3 * num4) / den
     
     num1 = 2 * math.sin(a1 - a2)
@@ -71,7 +81,7 @@ while running:
     
     
     pygame.display.flip()
-    fpsClock.tick(35)
+    fpsClock.tick(FPS)
 
     event = pygame.event.poll()
     if event.type == pygame.QUIT:
