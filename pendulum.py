@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # elitehuitzil@gmail.com
 
-import pygame
 import math
 
-# surface esolutions
+import pygame
+
+# surface esolutions.
 w, h = 600, 600
 # frames per second
 FPS = 35
